@@ -18,6 +18,8 @@
 #include QMK_KEYBOARD_H
 #include "muse.h"
 #include "keymap_norwegian.h"
+#define USB_POLLING_INTERVAL_MS 4
+#define QMK_KEYS_PER_SCAN 4
 
 enum preonic_layers {
   _QWERTY,
