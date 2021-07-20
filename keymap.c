@@ -63,9 +63,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |   |  |   F1 |   F2 |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9 |  F10  |  '   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |macro1|macro2|      |      |      |      |      |      |   -  |  /   |  \   |
+ * |      |      |      |      |      |      |      |      |      |   -  |  /   |  \   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Caps |m1play|m2play|      |      |      |      |      |      |   [  |   ]  |Prints|
+ * | Caps |      |      |      |      |      |      |      |      |   [  |   ]  |Prints|
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |rshift|  <   |   >  |      |      |      |      |      | Play | Stop | Mute | File |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -74,8 +74,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT_preonic_grid( \
   NO_PIPE,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  NO_QUOT,  \
-  _______, DM_REC1, DM_REC2, _______, _______, _______, _______, _______, _______, NO_MINS, NO_SLSH, NO_BSLS, \
-  KC_CAPSLOCK, DM_PLY1, DM_PLY2, _______, _______, _______, _______, _______, _______, NO_LCBR, NO_RBRC, KC_PSCREEN, \
+  _______, _______, _______, _______, _______, _______, _______, _______, _______, NO_MINS, NO_SLSH, NO_BSLS, \
+  KC_CAPSLOCK, _______, _______, _______, _______, _______, _______, _______, _______, NO_LCBR, NO_RBRC, KC_PSCREEN, \
   KC_RSHIFT, NO_LABK, NO_RABK, _______, _______, _______, _______, _______, KC_MPLY, KC_MSTP, KC_MUTE, KC_MYCM, \
   _______, _______, _______, _______, _______, _______, DM_RSTP, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT  \
 ),
@@ -126,12 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (!process_record_dynamic_macro(keycode, record)) {
-        return false;
-    }
-    return true;
-}
-    switch (keycode) {
+  switch (keycode) {
         case QWERTY:
           if (record->event.pressed) {
             set_single_persistent_default_layer(_QWERTY);
