@@ -11,7 +11,7 @@
 #endif
 
 #define MUSIC_MASK (keycode != KC_NO)
-
+#define DYNAMIC_MACRO_NO_NESTING
 /*
  * MIDI options
  */
