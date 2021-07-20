@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |  @   |  €   |   $  |   (  |   )  |   [  |   ]  |  {   |   }  |  ~   |  ?   | Del  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  7   |  8   |  9   |      |      |      |      |      |   +  |  -   |   _  |
+ * |      |  7   |  8   |  9   |      |      |      |      |      |   +  |  -   | Ins  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Caps |  4   |  5   |  6   |      |      |      |      |      |   *  |  =   |Prints|
  * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT_preonic_grid( \
   NO_AT, NO_PND, NO_DLR, NO_LPRN, NO_RPRN, NO_LBRC, NO_RBRC, NO_LCBR, NO_RCBR, NO_TILD, NO_QUES, KC_DELETE, \
-  _______, KC_7, KC_8, KC_9, _______, _______, _______, _______, _______, NO_PLUS, NO_MINS, NO_GRV, \
+  _______, KC_7, KC_8, KC_9, _______, _______, _______, _______, _______, NO_PLUS, NO_MINS, KC_INS, \
   KC_CAPSLOCK, KC_4, KC_5, KC_6, _______, _______, _______, _______, _______, NO_ASTR, NO_EQL, KC_PSCREEN, \
   KC_RSHIFT, KC_1, KC_2, KC_3, _______, _______, _______, _______, _______, NO_CIRC, NO_PIPE, KC_MENU, \
   KC_RCTRL, KC_RALT, KC_RGUI, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN,  KC_PGUP,  KC_END  \
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_ADJUST] = LAYOUT_preonic_grid( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  \
   _______, RESET,   DEBUG,   _______, _______, _______, _______, TERM_ON, TERM_OFF,_______, _______, _______,  \
-  _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______, _______, \
+  _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  _______, _______,  _______, _______, \
   _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______, \
   BACKLIT, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY  \
 )
@@ -134,19 +134,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           }
           return false;
           break;
-        case COLEMAK:
-          if (record->event.pressed) {
-            set_single_persistent_default_layer(_COLEMAK);
-          }
-          return false;
-          break;
-        case DVORAK:
-          if (record->event.pressed) {
-            set_single_persistent_default_layer(_DVORAK);
-          }
-          return false;
-          break;
-        case ADJUST:
+       case ADJUST:
           if (record->event.pressed) {
             layer_on(_RAISE);
             layer_on(_LOWER);
