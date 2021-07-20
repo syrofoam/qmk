@@ -125,9 +125,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 };
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
+    if (!process_record_dynamic_macro(keycode, record)) {
+        return false;
+    }
+    return true;
+}
+    switch (keycode) {
         case QWERTY:
           if (record->event.pressed) {
             set_single_persistent_default_layer(_QWERTY);
