@@ -63,21 +63,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |   |  |   F1 |   F2 |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9 |  F10  |  '   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Tab  |      |  up  |      |      |      |      |      |      |   -  |  /   |  \   |
+ * | Tab  |  Q   |  up  |  E   |      |      |      |      |      |   -  |  /   |  \   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Caps | Left | down | Right|      |      |      |      |      |   [  |   ]  |Prints|
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |rshift|  <   |   >  |      |      |      |      |      | Play | Stop | Mute | File |
+ * |rshift|  <   |   >  |  +   |  -   |  *   |  =   |      | Play | Stop | Mute | File |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |    space    |      | Prev | Vol- | Vol+ | Next |
+ * | Ctrl |Sysreq|Enter |Lower |      |    space    |Raise | Prev | Vol- | Vol+ | Next |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_preonic_grid( \
   NO_PIPE,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  NO_QUOT,  \
-  KC_TAB, _______, KC_UP, _______, _______, _______, _______, _______, _______, NO_MINS, NO_SLSH, NO_BSLS, \
+  KC_TAB, KC_Q, KC_UP, KC_E, _______, _______, _______, _______, _______, NO_MINS, NO_SLSH, NO_BSLS, \
   KC_CAPSLOCK, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______, _______, _______, NO_LCBR, NO_RBRC, KC_PSCREEN, \
-  KC_RSHIFT, NO_LABK, NO_RABK, _______, _______, _______, _______, _______, KC_MPLY, KC_MSTP, KC_MUTE, KC_MYCM, \
-  _______, _______, _______, _______, _______, _______, KC_SPC, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT  \
+  KC_RSHIFT, NO_LABK, NO_RABK, NO_PLUS, NO_MINS, NO_ASTR, NO_EQL, _______, KC_MPLY, KC_MSTP, KC_MUTE, KC_MYCM, \
+  KC_LCTL, KC_SYSREQ, KC_ENT, _______, _______, _______, KC_SPC, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT  \
 ),
 
 /* Raise
@@ -194,7 +194,7 @@ uint16_t muse_counter = 0;
 uint8_t muse_offset = 70;
 uint16_t muse_tempo = 50;
 
-bool encoder_update_user(uint8_t index, bool clockwise) {
+/*bool encoder_update_user(uint8_t index, bool clockwise) {
   if (muse_mode) {
     if (IS_LAYER_ON(_RAISE)) {
       if (clockwise) {
@@ -219,7 +219,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
   }
     return true;
-}
+}*/
 
 void dip_switch_update_user(uint8_t index, bool active) {
     switch (index) {
@@ -238,7 +238,6 @@ void dip_switch_update_user(uint8_t index, bool active) {
             }
     }
 }
-
 
 void matrix_scan_user(void) {
 #ifdef AUDIO_ENABLE
