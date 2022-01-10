@@ -63,26 +63,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |   |  |   F1 |   F2 |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9 |  F10  |  '   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Tab  |  Q   |  up  |  E   |      |      |      |      |      |   -  |  /   |  \   |
+ * | Tab  |   Å  |  up  |  Æ   |  -   |  +   |      |      |      |   -  |  /   |  \   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Caps | Left | down | Right|      |      |      |      |      |   [  |   ]  |Prints|
+ * | Caps | Left | down | Right|  *   |  \   |      |      |      |   [  |   ]  |Prints|
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |rshift|  <   |   >  |  +   |  -   |  *   |  =   |      | Play | Stop | Mute | File |
+ * |rshift|  <   |   >  |  ,   |  .   |  /   |  =   |      | Play | Stop | Mute | File |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Ctrl |Sysreq|Enter |Lower |      |    space    |Raise | Prev | Vol- | Vol+ | Next |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_preonic_grid( \
   NO_PIPE,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  NO_QUOT,  \
-  KC_TAB, KC_Q, KC_UP, KC_E, _______, _______, _______, _______, _______, NO_MINS, NO_SLSH, NO_BSLS, \
-  KC_CAPSLOCK, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______, _______, _______, NO_LCBR, NO_RBRC, KC_PSCREEN, \
-  KC_RSHIFT, NO_LABK, NO_RABK, NO_PLUS, NO_MINS, NO_ASTR, NO_EQL, _______, KC_MPLY, KC_MSTP, KC_MUTE, KC_MYCM, \
+  KC_TAB, NO_ARNG, KC_UP, NO_AE, NO_MINS, NO_PLUS, _______, _______, _______, NO_MINS, NO_SLSH, NO_BSLS, \
+  KC_CAPSLOCK, KC_LEFT, KC_DOWN, KC_RGHT, NO_ASTR, NO_BSLS, _______, _______, _______, NO_LCBR, NO_RBRC, KC_PSCREEN, \
+  KC_RSHIFT, NO_LABK, NO_RABK, KC_COMM, KC_DOT, NO_SLSH, NO_EQL, _______, KC_MPLY, KC_MSTP, KC_MUTE, KC_MYCM, \
   KC_LCTL, KC_SYSREQ, KC_ENT, _______, _______, _______, KC_SPC, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT  \
 ),
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |  @   |  €   |   $  |   (  |   )  |   [  |   ]  |  {   |   }  |  ~   |  ?   | Del  |
+ * |  @   |  %   |   $  |   (  |   )  |   [  |   ]  |  {   |   }  |  ~   |  &   | Del  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | tab  |  7   |  8   |  9   |      |      |      |      |      |   +  |  -   | Ins  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_preonic_grid( \
-  NO_AT, NO_PND, NO_DLR, NO_LPRN, NO_RPRN, NO_LBRC, NO_RBRC, NO_LCBR, NO_RCBR, NO_TILD, NO_QUES, KC_DELETE, \
+  NO_AT, NO_PERC, NO_DLR, NO_LPRN, NO_RPRN, NO_LBRC, NO_RBRC, NO_LCBR, NO_RCBR, NO_TILD, NO_AMPR, KC_DELETE, \
   KC_TAB, KC_7, KC_8, KC_9, _______, _______, _______, _______, _______, NO_PLUS, NO_MINS, KC_INS, \
   KC_CAPSLOCK, KC_4, KC_5, KC_6, _______, _______, _______, _______, _______, NO_ASTR, NO_EQL, KC_PSCREEN, \
   KC_RSHIFT, KC_1, KC_2, KC_3, _______, _______, _______, _______, _______, NO_CIRC, NO_PIPE, KC_MENU, \
