@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_preonic_grid( \
-  KC_GESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
+  KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, \
   KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    NO_ARNG,  \
-  KC_CAPS,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    NO_OSTR,  NO_AE, \
+  KC_CAPS_LOCK,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    NO_OSTR,  NO_AE, \
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  NO_MINS, KC_ENT,  \
   KC_LCTL, KC_LGUI, NO_QUES, KC_LALT,  LOWER,   KC_SPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT  \
 ),
@@ -75,9 +75,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_preonic_grid( \
   NO_PIPE,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  NO_QUOT,  \
   KC_TAB, NO_ARNG, KC_UP, NO_AE, NO_MINS, NO_PLUS, _______, _______, _______, NO_MINS, NO_SLSH, NO_BSLS, \
-  KC_CAPSLOCK, KC_LEFT, KC_DOWN, KC_RGHT, NO_ASTR, NO_BSLS, _______, _______, _______, NO_LCBR, NO_RBRC, KC_PSCREEN, \
-  KC_RSHIFT, NO_LABK, NO_RABK, KC_COMM, KC_DOT, NO_SLSH, NO_EQL, _______, KC_MPLY, KC_MSTP, KC_MUTE, KC_MYCM, \
-  KC_LCTL, KC_SYSREQ, KC_ENT, _______, _______, _______, KC_SPC, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT  \
+  KC_CAPS_LOCK, KC_LEFT, KC_DOWN, KC_RGHT, NO_ASTR, NO_BSLS, _______, _______, _______, NO_LCBR, NO_RBRC, KC_PSCR, \
+  KC_LSFT, NO_LABK, NO_RABK, KC_COMM, KC_DOT, NO_SLSH, NO_EQL, _______, KC_MPLY, KC_MSTP, KC_MUTE, KC_MYCM, \
+  KC_LCTL, KC_SYRQ, KC_ENT, _______, _______, _______, KC_SPC, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT  \
 ),
 
 /* Raise
@@ -96,9 +96,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT_preonic_grid( \
   NO_AT, NO_PERC, NO_DLR, NO_LPRN, NO_RPRN, NO_LBRC, NO_RBRC, NO_LCBR, NO_RCBR, NO_TILD, NO_AMPR, KC_DELETE, \
   KC_TAB, KC_7, KC_8, KC_9, _______, _______, _______, _______, _______, NO_PLUS, NO_MINS, KC_INS, \
-  KC_CAPSLOCK, KC_4, KC_5, KC_6, _______, _______, _______, _______, _______, NO_ASTR, NO_EQL, KC_PSCREEN, \
-  KC_RSHIFT, KC_1, KC_2, KC_3, _______, _______, _______, _______, _______, NO_CIRC, NO_PIPE, KC_MENU, \
-  KC_RCTRL, KC_RALT, KC_RGUI, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN,  KC_PGUP,  KC_END  \
+  KC_CAPS_LOCK, KC_4, KC_5, KC_6, _______, _______, _______, _______, _______, NO_ASTR, NO_EQL, KC_PSCR, \
+  KC_RSFT, KC_1, KC_2, KC_3, _______, _______, _______, _______, _______, NO_CIRC, NO_PIPE, KC_MENU, \
+  KC_RCTL, KC_RALT, KC_RGUI, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN,  KC_PGUP,  KC_END  \
 ),
 
 /* Adjust (Lower + Raise)
@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_preonic_grid( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  \
-  _______, RESET,   DEBUG,   _______, _______, _______, _______, TERM_ON, TERM_OFF,_______, _______, _______,  \
+  _______, RESET,   _______,   _______, _______, _______, _______, _______, _______,_______, _______, _______,  \
   _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  _______, _______,  _______, _______, \
   _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______, \
   BACKLIT, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY  \
